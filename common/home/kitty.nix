@@ -7,6 +7,8 @@
       settings = {
         confirm_os_window_close = 0;
 
+        font_family = "FiraCode";
+
         tab_bar_min_tabs = 1;
         tab_bar_edge = "bottom";
         tab_bar_style = "powerline";

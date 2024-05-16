@@ -50,6 +50,14 @@
     enableKwallet = true;
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+      ];
+    })
+  ];
+
 
   services.onedrive.enable = true;
 
@@ -78,6 +86,8 @@
     xwaylandvideobridge
     toybox
     xorg.xhost
+    vimPlugins.LazyVim
+    gcc
     #avahi
     # zsh
   ];
