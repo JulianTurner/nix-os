@@ -44,9 +44,6 @@ in
       ### KEYBINDINGS ###
       ####################
 
-
-
-
       "$mod" = "SUPER";
       bind =
         [

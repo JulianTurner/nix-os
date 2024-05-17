@@ -14,6 +14,13 @@
       theme = "agnoster";
     };
 
+    initExtra = ''
+      # Start ssh-agent
+      eval "$(ssh-agent -s)" > /dev/null
+      ssh-add ~/.ssh/id_ed25519 > /dev/null
+    '';
+
+
     # shellAliases = {
     #   ll = "ls -l";
     #   update = "sudo nixos-rebuild switch";

@@ -73,7 +73,9 @@
     nixpkgs-fmt
     gdrive3
     bat
-    gh
+    gitAndTools.gh
+
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
