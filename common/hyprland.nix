@@ -15,6 +15,5 @@
     dunst
     libnotify
     rofi-wayland
-    hyprpicker
   ];
 }
