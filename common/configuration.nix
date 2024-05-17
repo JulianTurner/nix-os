@@ -45,10 +45,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  security.pam.services.kwallet = {
-    name = "kwallet";
-    enableKwallet = true;
-  };
+  # security.pam.services.kwallet = {
+  #   name = "kwallet";
+  #   enableKwallet = true;
+  # };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {
