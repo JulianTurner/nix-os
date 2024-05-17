@@ -74,6 +74,8 @@
     gdrive3
     bat
     gitAndTools.gh
+    keychain
+
 
 
     # # Adds the 'hello' command to your environment. It prints a friendly

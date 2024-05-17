@@ -15,17 +15,19 @@
     };
 
     initExtra = ''
-      # Start ssh-agent
-      eval "$(ssh-agent -s)" > /dev/null
-      ssh-add ~/.ssh/id_ed25519 > /dev/null
+      # Initialize keychain to manage ssh-agent
+      eval "$(keychain --eval --agents ssh id_ed25519)" > /dev/null
     '';
 
 
-    # shellAliases = {
-    #   ll = "ls -l";
-    #   update = "sudo nixos-rebuild switch";
-    # };
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch --flake /home/julian/Repos/nix-os/flake.nix#xmg
+    ";
+    };
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
   };
 }
+
