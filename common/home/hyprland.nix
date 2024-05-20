@@ -16,7 +16,20 @@ in
       ### MONITORS ###
       ################
 
-      "monitor" = ",preferred,auto,auto";
+      # "monitor" = ",preferred,auto,auto";
+      "monitor" = ",highres,auto,2";
+
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
+      # toolkit-specific scale
+      "env" = [
+
+        "GDK_SCALE,2"
+        "XCURSOR_SIZE,32"
+      ];
+
 
       #################
       ### AUTOSTART ###

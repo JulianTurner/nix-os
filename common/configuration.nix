@@ -34,6 +34,21 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  security =
+    {
+      pam.services.kwallet = {
+        name = "kwallet";
+        enableKwallet = true;
+      };
+    };
+
+  programs =
+    {
+      gnupg.agent = {
+        enable = true;
+      };
+    };
+
   # security.polkit.enable = true;
 
   # systemd = {
