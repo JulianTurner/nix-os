@@ -16,8 +16,8 @@ in
       ### MONITORS ###
       ################
 
-      # "monitor" = ",preferred,auto,auto";
-      "monitor" = ",highres,auto,2";
+      "monitor" = ",preferred,auto,1";
+      # "monitor" = ",highres,auto,2";
 
       xwayland = {
         force_zero_scaling = true;

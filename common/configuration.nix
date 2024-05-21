@@ -34,22 +34,24 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  security =
-    {
-      pam.services.kwallet = {
-        name = "kwallet";
-        enableKwallet = true;
-      };
-    };
+  # security =
+  #   {
+  #     pam.services.kwallet = {
+  #       name = "kwallet";
+  #       enableKwallet = true;
+  #     };
+  #   };
 
-  programs =
-    {
-      gnupg.agent = {
-        enable = true;
-      };
-    };
+  # programs =
+  #   {
+  #     gnupg.agent = {
+  #       enable = true;
+  #     };
+  #   };
 
-  # security.polkit.enable = true;
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
 
   # systemd = {
   #   user.services.polkit-gnome-authentication-agent-1 = {
@@ -66,6 +68,11 @@
   #     };
   #   };
   # };
+
+  # systemd = { };
+
+  programs.ssh.startAgent = true;
+
 
 
   # Desktopportals
@@ -122,9 +129,17 @@
     xorg.xhost
     vimPlugins.LazyVim
     gcc
+    gnome.seahorse
+    gnome.gnome-keyring
+
+    # gnome-keyring
     #avahi
     # zsh
   ];
+
+  programs.seahorse.enable = true;
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+
 
   systemd.services.set-xhost = {
     description = "Set xhost permissions";

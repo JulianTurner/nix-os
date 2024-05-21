@@ -15,8 +15,7 @@
     };
 
     initExtra = ''
-      # Initialize keychain to manage ssh-agent
-      eval "$(keychain --eval --agents ssh id_ed25519)" > /dev/null
+
     '';
 
 
